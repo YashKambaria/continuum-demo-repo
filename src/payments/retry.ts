@@ -2,6 +2,7 @@ export type PaymentAttempt = {
   status?: number;
   code?: string;
   retryAfterMs?: number;
+  provider?: "stripe" | "adyen" | "other";
 };
 
 export type RetryDecision = {
@@ -30,7 +31,7 @@ export function decidePaymentRetry(
     return { shouldRetry: true, delayMs, reason: "gateway rate limit" };
   }
 
-  if (attempt.status && attempt.status >= 500 && attempt.status < 600) {
+  if (attempt.status && attempt.status >= 500 && attempt.status < 600 && attempt.provider !== "adyen") {
     const jitter = now % 251;
     return {
       shouldRetry: true,
