@@ -8,3 +8,9 @@ export function formatUsd(cents: number): string {
     currency: "USD",
   }).format(cents / 100);
 }
+
+/** Produces a short, safe-to-share reference for a payment operation. */
+export function formatPaymentReference(requestId?: string): string {
+  if (!requestId) return "Payment reference unavailable";
+  return `Payment ref: ${requestId.slice(-8).toUpperCase()}`;
+}

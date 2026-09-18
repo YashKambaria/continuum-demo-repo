@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T12:52:40.047Z",
+  "generatedAt": "2026-09-18T14:36:57.614Z",
   "repository": "continuum-demo-repo",
   "formula": "risk = ownership concentration (40) + complexity (30) + documentation gap (20) + recent change (10)",
   "modules": [
@@ -61,18 +61,18 @@
           "commits": 1
         }
       ],
-      "lines": 11,
-      "executableLines": 10,
-      "documentationLines": 2,
-      "branchPoints": 0,
+      "lines": 17,
+      "executableLines": 15,
+      "documentationLines": 3,
+      "branchPoints": 2,
       "documentationCoverage": 1,
       "components": {
         "ownership": 0,
-        "complexity": 0,
+        "complexity": 8,
         "documentationGap": 0,
         "recentChange": 10
       },
-      "score": 10,
+      "score": 18,
       "status": "healthy"
     }
   ]
