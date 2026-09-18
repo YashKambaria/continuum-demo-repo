@@ -23,7 +23,7 @@ export function decidePaymentRetry(
     return { shouldRetry: false, delayMs: 0, reason: "retry limit or unsafe operation" };
   }
 
-  if (attempt.status === 429) {
+  if (attempt.status === 429 || attempt.code === "RATE_LIMITED") {
     const delayMs = attempt.retryAfterMs && attempt.retryAfterMs > 0
       ? Math.min(attempt.retryAfterMs, 15_000)
       : 1_000 * (retryCount + 1);
