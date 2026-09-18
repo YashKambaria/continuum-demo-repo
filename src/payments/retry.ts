@@ -3,6 +3,7 @@ export type PaymentAttempt = {
   code?: string;
   retryAfterMs?: number;
   provider?: "stripe" | "adyen" | "other";
+  requestId?: string;
 };
 
 export type RetryDecision = {
