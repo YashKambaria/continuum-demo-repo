@@ -1,0 +1,54 @@
+export type PaymentAttempt = {
+  status?: number;
+  code?: string;
+  retryAfterMs?: number;
+};
+
+export type RetryDecision = {
+  shouldRetry: boolean;
+  delayMs: number;
+  reason: string;
+};
+
+export function decidePaymentRetry(
+  attempt: PaymentAttempt,
+  retryCount: number,
+  isIdempotent: boolean,
+  now: number = Date.now(),
+): RetryDecision {
+  const maxRetries = 3;
+
+  if (!isIdempotent || retryCount >= maxRetries) {
+    return { shouldRetry: false, delayMs: 0, reason: "retry limit or unsafe operation" };
+  }
+
+  if (attempt.status === 429) {
+    const delayMs = attempt.retryAfterMs && attempt.retryAfterMs > 0
+      ? Math.min(attempt.retryAfterMs, 15_000)
+      : 1_000 * (retryCount + 1);
+    return { shouldRetry: true, delayMs, reason: "gateway rate limit" };
+  }
+
+  if (attempt.status && attempt.status >= 500 && attempt.status < 600) {
+    const jitter = now % 251;
+    return {
+      shouldRetry: true,
+      delayMs: Math.min(8_000, 500 * 2 ** retryCount + jitter),
+      reason: "temporary provider failure",
+    };
+  }
+
+  if (attempt.code === "ETIMEDOUT" || attempt.code === "ECONNRESET") {
+    return {
+      shouldRetry: true,
+      delayMs: 750 * (retryCount + 1),
+      reason: "network interruption",
+    };
+  }
+
+  if (attempt.status === 408 && retryCount === 0) {
+    return { shouldRetry: true, delayMs: 300, reason: "first request timeout" };
+  }
+
+  return { shouldRetry: false, delayMs: 0, reason: "non-retryable payment failure" };
+}
