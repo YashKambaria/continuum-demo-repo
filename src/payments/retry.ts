@@ -17,6 +17,7 @@ export function decidePaymentRetry(
   now: number = Date.now(),
 ): RetryDecision {
   const maxRetries = 3;
+  const providerBackoffCapMs = 8_000;
 
   if (!isIdempotent || retryCount >= maxRetries) {
     return { shouldRetry: false, delayMs: 0, reason: "retry limit or unsafe operation" };
@@ -33,7 +34,7 @@ export function decidePaymentRetry(
     const jitter = now % 251;
     return {
       shouldRetry: true,
-      delayMs: Math.min(8_000, 500 * 2 ** retryCount + jitter),
+      delayMs: Math.min(providerBackoffCapMs, 500 * 2 ** retryCount + jitter),
       reason: "temporary provider failure",
     };
   }
