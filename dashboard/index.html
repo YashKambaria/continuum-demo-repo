@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Continuum | Knowledge Silo Risk</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">CONTINUUM / DEMO</p>
+      <header><div><h1>Knowledge Silo Risk</h1><p id="subtitle">Analyzing repository...</p></div><button id="refresh">Refresh analysis</button></header>
+      <section class="summary" aria-label="Risk summary"><div><span>Modules scanned</span><strong id="module-count">-</strong></div><div><span>Critical modules</span><strong id="critical-count">-</strong></div><div><span>Highest risk</span><strong id="highest-risk">-</strong></div></section>
+      <section><div class="section-title"><h2>Risk heatmap</h2><p>Risk combines concentrated ownership, code complexity, missing documentation, and recent change.</p></div><div id="modules" class="modules"></div></section>
+      <section id="details" class="details" hidden></section>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

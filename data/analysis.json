@@ -1,0 +1,79 @@
+{
+  "generatedAt": "2026-09-18T12:52:40.047Z",
+  "repository": "continuum-demo-repo",
+  "formula": "risk = ownership concentration (40) + complexity (30) + documentation gap (20) + recent change (10)",
+  "modules": [
+    {
+      "file": "src/payments/retry.ts",
+      "moduleName": "retry.ts",
+      "primaryOwner": {
+        "name": "Alice Shah",
+        "email": "alice@continuum.dev"
+      },
+      "primaryOwnerCommits": 6,
+      "totalCommits": 7,
+      "ownershipShare": 0.8571428571428571,
+      "contributors": [
+        {
+          "name": "Bob Chen",
+          "email": "bob@continuum.dev",
+          "commits": 1
+        },
+        {
+          "name": "Alice Shah",
+          "email": "alice@continuum.dev",
+          "commits": 6
+        }
+      ],
+      "lines": 58,
+      "executableLines": 49,
+      "documentationLines": 0,
+      "branchPoints": 21,
+      "documentationCoverage": 0,
+      "components": {
+        "ownership": 34,
+        "complexity": 30,
+        "documentationGap": 20,
+        "recentChange": 10
+      },
+      "score": 94,
+      "status": "critical"
+    },
+    {
+      "file": "src/utils/format.ts",
+      "moduleName": "format.ts",
+      "primaryOwner": {
+        "name": "Bob Chen",
+        "email": "bob@continuum.dev"
+      },
+      "primaryOwnerCommits": 1,
+      "totalCommits": 2,
+      "ownershipShare": 0.5,
+      "contributors": [
+        {
+          "name": "Bob Chen",
+          "email": "bob@continuum.dev",
+          "commits": 1
+        },
+        {
+          "name": "Alice Shah",
+          "email": "alice@continuum.dev",
+          "commits": 1
+        }
+      ],
+      "lines": 11,
+      "executableLines": 10,
+      "documentationLines": 2,
+      "branchPoints": 0,
+      "documentationCoverage": 1,
+      "components": {
+        "ownership": 0,
+        "complexity": 0,
+        "documentationGap": 0,
+        "recentChange": 10
+      },
+      "score": 10,
+      "status": "healthy"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "continuum-demo-repo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "analyze": "node scripts/analyze-repository.mjs",
+    "dashboard": "node scripts/serve-dashboard.mjs"
+  }
+}
