@@ -47,7 +47,7 @@ export function decidePaymentRetry(
     };
   }
 
-  if (attempt.status === 408 && retryCount === 0) {
+  if (attempt.status === 408 && retryCount === 0 && !attempt.retryAfterMs) {
     return { shouldRetry: true, delayMs: 300, reason: "first request timeout" };
   }
 
