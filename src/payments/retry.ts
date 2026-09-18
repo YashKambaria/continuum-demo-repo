@@ -4,6 +4,7 @@ export type PaymentAttempt = {
   retryAfterMs?: number;
   provider?: "stripe" | "adyen" | "other";
   requestId?: string;
+  timestamp?: number;
 };
 
 export type RetryDecision = {

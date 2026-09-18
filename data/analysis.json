@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T14:36:57.614Z",
+  "generatedAt": "2026-09-18T14:38:19.933Z",
   "repository": "continuum-demo-repo",
   "formula": "risk = ownership concentration (40) + complexity (30) + documentation gap (20) + recent change (10)",
   "modules": [
@@ -46,14 +46,14 @@
         "name": "Bob Chen",
         "email": "bob@continuum.dev"
       },
-      "primaryOwnerCommits": 1,
-      "totalCommits": 2,
-      "ownershipShare": 0.5,
+      "primaryOwnerCommits": 2,
+      "totalCommits": 3,
+      "ownershipShare": 0.6666666666666666,
       "contributors": [
         {
           "name": "Bob Chen",
           "email": "bob@continuum.dev",
-          "commits": 1
+          "commits": 2
         },
         {
           "name": "Alice Shah",
