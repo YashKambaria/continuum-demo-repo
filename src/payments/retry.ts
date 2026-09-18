@@ -39,7 +39,7 @@ export function decidePaymentRetry(
     };
   }
 
-  if (attempt.code === "ETIMEDOUT" || attempt.code === "ECONNRESET") {
+  if (attempt.code === "ETIMEDOUT" || attempt.code === "ECONNRESET" || attempt.code === "EPIPE") {
     return {
       shouldRetry: true,
       delayMs: 750 * (retryCount + 1),
