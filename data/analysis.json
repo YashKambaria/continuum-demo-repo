@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T14:38:19.933Z",
+  "generatedAt": "2026-09-18T14:50:28.180Z",
   "repository": "continuum-demo-repo",
   "formula": "risk = ownership concentration (40) + complexity (30) + documentation gap (20) + recent change (10)",
   "modules": [
@@ -11,9 +11,14 @@
         "email": "alice@continuum.dev"
       },
       "primaryOwnerCommits": 6,
-      "totalCommits": 7,
-      "ownershipShare": 0.8571428571428571,
+      "totalCommits": 8,
+      "ownershipShare": 0.75,
       "contributors": [
+        {
+          "name": "Continuum Bot",
+          "email": "bot@continuum.dev",
+          "commits": 1
+        },
         {
           "name": "Bob Chen",
           "email": "bob@continuum.dev",
@@ -25,18 +30,18 @@
           "commits": 6
         }
       ],
-      "lines": 58,
-      "executableLines": 49,
+      "lines": 59,
+      "executableLines": 50,
       "documentationLines": 0,
-      "branchPoints": 21,
+      "branchPoints": 22,
       "documentationCoverage": 0,
       "components": {
-        "ownership": 34,
+        "ownership": 30,
         "complexity": 30,
         "documentationGap": 20,
         "recentChange": 10
       },
-      "score": 94,
+      "score": 90,
       "status": "critical"
     },
     {
