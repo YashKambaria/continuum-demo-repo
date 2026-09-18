@@ -60,8 +60,8 @@ AI helps explain the risk and capture missing knowledge, but it does not invent 
 
 | Module | Expected score | Status | Why |
 | --- | ---: | --- | --- |
-| `src/payments/retry.ts` | 94/100 | Critical | Concentrated ownership, high branching complexity, no meaningful documentation |
-| `src/utils/format.ts` | 10/100 | Healthy | Documented, low-complexity shared utility |
+| `src/payments/retry.ts` | 90/100 | Critical | Concentrated ownership, high branching complexity, no meaningful documentation |
+| `src/utils/format.ts` | 18/100 | Healthy | Documented, low-complexity shared utility |
 
 ### Local dashboard
 
@@ -157,10 +157,10 @@ The deployed version will retain a risk record similar to:
   "repoId": "YashKambaria/continuum-demo-repo",
   "modulePath": "src/payments/retry.ts",
   "primaryOwner": "Alice Shah",
-  "ownershipShare": 0.86,
+  "ownershipShare": 0.75,
   "complexity": 21,
   "documentationCoverage": 0,
-  "riskScore": 94,
+  "riskScore": 90,
   "status": "critical"
 }
 ```
@@ -216,11 +216,11 @@ continuum-demo-repo/
 
 ## Hackathon demo narrative
 
-1. Analyze the repository and show `retry.ts` at **94/100 Critical**.
+1. Analyze the repository and show `retry.ts` at **90/100 Critical**.
 2. Explain the evidence: concentrated ownership, complex branching, and missing documentation.
 3. Let the Interview Agent ask a question about the real retry behavior.
 4. Submit the knowledge holder’s answer live.
 5. Show the Synthesis Agent generate documentation and create a GitHub-ready patch or pull request.
-6. Recalculate the documentation component and visibly reduce the score, for example **94 -> 54**.
+6. Recalculate the documentation component and visibly reduce the score, for example **90 -> 50**.
 
 Continuum does not merely identify a knowledge silo: it actively helps the team reduce it.
